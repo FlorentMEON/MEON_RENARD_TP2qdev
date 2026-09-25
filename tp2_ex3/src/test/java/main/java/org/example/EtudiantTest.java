@@ -1,5 +1,7 @@
 package main.java.org.example;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class EtudiantTest {
@@ -14,20 +16,20 @@ class EtudiantTest {
         assertEquals(12.0, et.getResultat().get("math"));
     }
 
-    @Test
+
     void getMoyenne() {
     }
 
-    @Test
+
     void getMoyenneGenerale() {
     }
-    @Test
+
     void getId() {
     }
-    @Test
+
     void getForma() {
     }
-    @Test
+
     void getResultat() {
     }
 }
