@@ -2,7 +2,7 @@ package main.java.org.example;
 
 import java.util.Map;
 
-public class Foramtion {
+public class Formation {
     String identifiant;
     Map<String,Double> matieres;
 
