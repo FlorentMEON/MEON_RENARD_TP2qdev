@@ -18,11 +18,11 @@ public class Formation {
         this.matieres.remove(matiere);
     }
 
-    public String getCoef(String matiere) {
+    public double getCoef(String matiere) {
         if(matieres.containsKey(matiere)){
-        return identifiant;
+        return this.matieres.get(matiere);
         }else{
-            return null;
+            return 0;
         }
     }
 
