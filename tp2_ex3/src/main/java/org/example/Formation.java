@@ -6,7 +6,7 @@ public class Formation {
     String identifiant;
     Map<String,Double> matieres;
 
-    public Foramtion(String identifiant) {
+    public Formation(String identifiant) {
         this.identifiant = identifiant;
     }
 
