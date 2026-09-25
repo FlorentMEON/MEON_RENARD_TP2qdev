@@ -3,8 +3,8 @@ package main.java.org.example;
 import java.util.Map;
 
 public class Formation {
-    String identifiant;
-    Map<String,Double> matieres;
+    private String identifiant;
+    private Map<String,Double> matieres;
 
     public Formation(String identifiant) {
         this.identifiant = identifiant;
@@ -24,6 +24,13 @@ public class Formation {
         }else{
             return null;
         }
+    }
+
+    public Map<String,Double> getMatieres() {
+        return matieres;
+    }
+    public String getIdentifiant() {
+       return identifiant;
     }
 
 
