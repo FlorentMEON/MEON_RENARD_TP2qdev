@@ -1,13 +1,15 @@
 package main.java.org.example;
 
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Groupe {
     private Set<Etudiant> etu;
-    Formation format;
+    Formation forma;
 
     public Groupe(Formation f) {
-        this.format = f;
+        this.forma = f;
+        this.etu = new TreeSet<Etudiant>();
     }
 
     public void ajouterEtudiant(Etudiant e) {
