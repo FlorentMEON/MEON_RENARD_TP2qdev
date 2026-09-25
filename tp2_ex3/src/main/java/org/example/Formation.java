@@ -20,9 +20,9 @@ public class Formation {
 
     public double getCoef(String matiere) {
         if(matieres.containsKey(matiere)){
-        return this.matieres.get(matiere);
+            return this.matieres.get(matiere);
         }else{
-            return 0;
+            throw new FormationNotFoundException("La matière n'est pas dans la formation");
         }
     }
 
