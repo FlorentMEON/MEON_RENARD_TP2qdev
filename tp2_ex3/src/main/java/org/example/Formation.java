@@ -1,5 +1,6 @@
 package main.java.org.example;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Formation {
@@ -8,13 +9,14 @@ public class Formation {
 
     public Formation(String identifiant) {
         this.identifiant = identifiant;
+        this.matieres = new HashMap<String, Double>();
     }
 
     public void ajouterFormation(String matiere,double valeur) {
         this.matieres.put(matiere,valeur);
     }
 
-    public void retirerFormation(String matiere,double valeur) {
+    public void retirerFormation(String matiere) {
         this.matieres.remove(matiere);
     }
 
