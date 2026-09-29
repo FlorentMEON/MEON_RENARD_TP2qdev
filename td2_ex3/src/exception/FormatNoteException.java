@@ -1,4 +1,4 @@
-package main.java.org.example;
+package exception;
 
 public class FormatNoteException extends RuntimeException{
     public FormatNoteException(String message){

@@ -1,4 +1,4 @@
-package main.java.org.example;
+package exception;
 
 public class FormationNotFoundException extends RuntimeException{
     public FormationNotFoundException(String message){

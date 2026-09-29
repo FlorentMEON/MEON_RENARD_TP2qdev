@@ -1,4 +1,4 @@
-package main.java.org.example;
+package main;
 
 public class Identite{
     private String nip,nom,prenom;
