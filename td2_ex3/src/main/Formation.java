@@ -3,6 +3,7 @@ package main;
 import exception.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Formation {
     private String identifiant;
@@ -35,7 +36,12 @@ public class Formation {
     public String getIdentifiant() {
         return identifiant;
     }
-    
-    
-    
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Formation formation = (Formation) o;
+        return this.identifiant.equals(formation.identifiant) ;
+    }
+
 }
