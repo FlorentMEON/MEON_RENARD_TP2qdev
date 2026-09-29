@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Etudiant{
+public class Etudiant implements Comparable<Etudiant>{
     private Identite id;
     private Formation forma;
     private Map<String, ArrayList<Double>> resultat;
@@ -19,6 +19,9 @@ public class Etudiant{
     public void addNote(String mat, Double note){
         if (note >= 0 && note <= 20){
             if (this.forma.getMatieres().containsKey(mat)){
+                if (!this.resultat.containsKey(mat)){
+                    this.resultat.put(mat, new ArrayList<Double>());
+                }
                 ArrayList<Double> notes = this.resultat.get(mat);
                 notes.add(note);
             } else {
@@ -72,5 +75,10 @@ public class Etudiant{
     
     public Map<String, ArrayList<Double>> getResultat(){
         return resultat;
+    }
+    
+    @Override
+    public int compareTo(Etudiant o){
+        return this.id.compareTo(o.id);
     }
 }
