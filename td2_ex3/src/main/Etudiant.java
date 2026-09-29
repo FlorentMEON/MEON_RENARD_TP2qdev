@@ -4,6 +4,7 @@ import exception.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Etudiant implements Comparable<Etudiant>{
     private Identite id;
@@ -80,5 +81,11 @@ public class Etudiant implements Comparable<Etudiant>{
     @Override
     public int compareTo(Etudiant o){
         return this.id.compareTo(o.id);
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        if (!(o instanceof Etudiant etudiant)) return false;
+        return this.id.equals(etudiant.id) && this.forma.equals(etudiant.forma);
     }
 }

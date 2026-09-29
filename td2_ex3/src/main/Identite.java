@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Objects;
+
 public class Identite implements Comparable<Identite>{
     private String nip,nom,prenom;
     
@@ -35,5 +37,11 @@ public class Identite implements Comparable<Identite>{
         } else {
             return valNom;
         }
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        if (!(o instanceof Identite identite)) return false;
+        return this.nip.equals(identite.nip);
     }
 }
