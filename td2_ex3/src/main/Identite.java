@@ -26,8 +26,8 @@ public class Identite implements Comparable<Identite>{
     @Override
     public int compareTo(Identite o){
         int valNom = this.nom.compareTo(o.nom);
-        int valPrenom = this.nom.compareTo(o.prenom);
-        int valNip = this.nom.compareTo(o.nip);
+        int valPrenom = this.prenom.compareTo(o.prenom);
+        int valNip = this.nip.compareTo(o.nip);
         if (valNom == 0){
             if (valPrenom == 0){
                 return valNip;

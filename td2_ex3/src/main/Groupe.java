@@ -1,7 +1,6 @@
 package main;
 
 import exception.FormationDifferenteException;
-
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -9,7 +8,7 @@ public class Groupe {
     private Set<Etudiant> etu;
     Formation forma;
     
-    public Groupe(Formation f) {
+    public Groupe(Formation f){
         this.forma = f;
         this.etu = new TreeSet<Etudiant>();
     }
@@ -24,5 +23,13 @@ public class Groupe {
     
     public void retirerEtudiant(Etudiant e)  {
         this.etu.remove(e);
+    }
+    
+    public Formation getForma(){
+        return forma;
+    }
+    
+    public Set<Etudiant> getEtu(){
+        return etu;
     }
 }
