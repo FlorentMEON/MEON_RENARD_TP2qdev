@@ -34,14 +34,18 @@ public class Etudiant implements Comparable<Etudiant>{
     
     public Double getMoyenne(String mat){
         if (this.getForma().getMatieres().containsKey(mat)){
-            double res = 0.0;
-            ArrayList<Double> notes = this.resultat.get(mat);
-            int n = notes.size();
-            for (Double note : notes){
-                res += note;
+            if (this.resultat.containsKey(mat)){
+                double res = 0.0;
+                ArrayList<Double> notes = this.resultat.get(mat);
+                int n = notes.size();
+                for (Double note : notes){
+                    res += note;
+                }
+                res = res/n;
+                return  res;
+            } else {
+                throw new PasDeNoteException("aucune notes dans cette matière");
             }
-            res = res/n;
-            return  res;
         } else {
             throw new FormationNotFoundException("la formation ne contient pas cette matière");
         }

@@ -1,6 +1,6 @@
 package main;
 
-import exception.FormationDifferenteException;
+import exception.*;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -32,4 +32,45 @@ public class Groupe {
     public Set<Etudiant> getEtu(){
         return etu;
     }
+    
+    public Double getMoyenne(String mat){
+        if (this.forma.getMatieres().containsKey(mat)){
+            if (!this.etu.isEmpty()){
+                Double res = 0.0;
+                int n = 0;
+                for (Etudiant e : this.etu){
+                    try{
+                        res += e.getMoyenne(mat);
+                        n += 1;
+                    } catch (PasDeNoteException _){}
+                }
+                if (n == 0){
+                    throw new PasDeNoteException("personne n'a des notes dans cette matière");
+                }
+                return res / n;
+                
+            } else throw new PasDeNoteException("aucun étudiant dans le groupe");
+        } else {
+            throw new FormationNotFoundException("la formation ne contient pas cette matière");
+        }
+    }
+    
+    public double getMoyenneGenerale(){
+        if (!this.etu.isEmpty()){
+            Double res = 0.0;
+            int n = 0;
+            for (Etudiant e : this.etu){
+                try{
+                    res += e.getMoyenneGenerale();
+                    n += 1;
+                } catch (PasDeNoteException _){
+                }
+            }
+            if (n == 0){
+                throw new PasDeNoteException("personne n'a des notes dans ce groupe");
+            }
+            return res / n;
+        } else throw new PasDeNoteException("aucun étudiant dans le groupe");
+    }
+    
 }
