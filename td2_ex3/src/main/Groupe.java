@@ -97,5 +97,20 @@ public class Groupe {
         }
         this.etu=etud;
     }
-
+    public void triParMerite(){
+        Comparator<Etudiant>ce=new Comparator<Etudiant>(){
+            public int compare(Etudiant e1,Etudiant e2){
+                int res=e2.getMoyenneGenerale().compareTo(e1.getMoyenneGenerale());
+                if(res==0){
+                    res=e1.getId().getNom().compareTo(e2.getId().getNom());
+                }
+                return res;
+            }
+        };
+        TreeSet<Etudiant>etud=new TreeSet<Etudiant>(ce);
+        for(Etudiant e:etu){
+            etud.add(e);
+        }
+        this.etu=etud;
+    }
 }
